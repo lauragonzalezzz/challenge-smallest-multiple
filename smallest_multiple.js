@@ -7,8 +7,22 @@
  *                            between 1 and `ceiling`
  */
 module.exports = function( ceiling ) {
-  // do work here
+	var result;
+  	var arr = [];
+
+//Add each number up to ceiling into array
+  for (var i = 1; i <= ceiling; i++) {
+  	arr.push(i);
+  }
+
+//Check that max is divisible by all numbers in array;
+  for (var i = 0; i < arr.length; i++) {
+  	if (result % arr[i] !== 0) {
+  		result += 2;
+  		i = 0;
+  	}
+ }
 
 
-  return 0;
+  return result;
 };
